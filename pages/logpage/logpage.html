@@ -1,0 +1,57 @@
+<!--
+  Generated template for the LogpagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content no-padding  style="background:linear-gradient(-135deg, #cb1b58, #660066)">
+
+  <h1 style="margin-top:70px; font-family:sans-serif;text-align: center;color: #ffffff">VAIOTI<sup style="color: #ffaf24;font-size: 15px;">PRO</sup></h1>
+<ion-row>
+  <ion-col col-4>
+
+
+  </ion-col>
+
+  <ion-col col-4 style="text-align: center">
+
+    <ion-icon name="logo-apple" color="action"  style="zoom:1.6;margin-left: 5px"></ion-icon>
+
+
+    <ion-icon name="logo-windows" color="action" style="zoom: 1.1;margin-left: 5px"></ion-icon>
+    <ion-icon name="logo-tux" color="action" style="zoom: 1.3;margin-left: 5px"></ion-icon>
+
+     </ion-col>
+
+  <ion-col col-4>
+
+  </ion-col>
+
+
+</ion-row>
+
+  <div style="margin-top:40%;">
+
+  <ion-item no-border no-lines style="background-color: rgba(255,255,255,0)">
+    <ion-label color="action"  style="margin-left: 2%" stacked> Email </ion-label>
+    <ion-input no-lines class="logbox"  placeholder="Email" [(ngModel)]="email" no-lines no-border required></ion-input>
+  </ion-item>
+
+  <ion-item no-border no-lines style="background-color: rgba(255,255,255,0)">
+    <ion-label color="action" style="margin-left: 2%" stacked>License</ion-label>
+    <ion-input no-lines class="logbox"  type="text" placeholder="License ID" [(ngModel)]="id" no-lines no-border required></ion-input>
+  </ion-item>
+
+  <button ion-button block style="width: 90%; margin-left:4%; margin-top:4%; background-color: #ffaf24" (click)="login(email,id)"> Activate </button>
+
+
+    <p style="text-align: center;color: #ffffff;margin-top: 70px;">To reset your License,  visit:- <b>www.vaioti.in/pro</b></p>
+
+    <p style="font-size: 10px;text-align: center;color: #ffffff;margin-top: 10px;">©copyright 2018</p>
+
+
+  </div>
+
+</ion-content>

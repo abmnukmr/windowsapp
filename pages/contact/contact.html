@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+
+
+    <ion-list-header>Create Quick List</ion-list-header>
+    <ion-item >
+
+      <ion-label item-start style="color: #ffaf24">Quick Menu/list</ion-label>
+      <button  ion-button   item-end clear icon-only (click)=" quicklist()"><ion-icon name="list" color="#fff"></ion-icon> </button>
+    </ion-item>
+
+<!--
+    <ion-list-header> Chat button enable/disable</ion-list-header>
+     <ion-item >
+      <ion-label item-start style="color: #cb1b58">Chat button enable/disable </ion-label>
+      <ion-toggle ></ion-toggle>
+    </ion-item>
+-->
+
+
+
+
+    <ion-list-header> Contact us</ion-list-header>
+
+    <ion-item >
+      <ion-label item-start style="color: #cb1b58">Website(IN)</ion-label>
+      <ion-label  style="color: #100b63">www.vaioti.in</ion-label>
+    </ion-item>
+
+    <ion-list-header>Update your Location </ion-list-header>
+
+    <ion-item >
+      <ion-label item-end style="color: #100b63">www.vaioti.in>Home>Location</ion-label>
+    </ion-item>
+
+    <ion-list-header>Software version</ion-list-header>
+
+    <ion-item >
+      <ion-label item-start style="color: #cb1b58">Version</ion-label>
+      <ion-label item-end style="color: #100b63">v 1.4.13</ion-label>
+    </ion-item>
+
+    <ion-list-header>Logout</ion-list-header>
+
+    <ion-item >
+      <ion-label item-start style="color: #f90b1d">Logout</ion-label>
+      <button  ion-button  (click)="logout()"  clear item-end><ion-icon name="log-out"></ion-icon> </button>
+    </ion-item>
+  </ion-list>
+
+   <p style="color: #660066; text-align: center;"> Vist for help:- www.vaioti.in </p>
+   <p style="color: #898989; text-align: center; font-size: small"> ©copyright 2018  </p>
+
+</ion-content>

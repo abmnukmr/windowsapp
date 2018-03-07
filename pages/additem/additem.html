@@ -1,0 +1,99 @@
+<!--
+  Generated template for the Additem page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="Dismiss4()">
+
+        <ion-icon name="close" padding-right="8px" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button icon-only  (click)="uploadImage()"  *ngIf="show">
+        <ion-icon name="cloud-upload" padding-right="8px" ></ion-icon>
+      </button>    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+<ion-list>
+
+
+  <div [hidden]="spinshow" class="spinner-container">
+    <p>wait..</p>
+    <ion-spinner></ion-spinner>
+  </div>
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="itemname" placeholder="Item Name/Post title/Component title/ "></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="itemnumber" placeholder="Item/Component/Post Number"></ion-input>
+  </ion-item>
+
+
+
+  <vaioti-text [formControlItem]="item"   placeholderText="Item/Component/Post description"></vaioti-text>
+
+<p>p+{{item.value}}</p>
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="itemprice" placeholder="Item price(eg. 172/-(20% Off))/sub heading "></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="link" placeholder=" Url(Link):- (optional)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="label" placeholder="Button label :-(optional)"></ion-input>
+  </ion-item>
+
+
+  <ion-item no-border no-lines>
+    <ion-label color="primary" style="margin-left: 2%" stacked>Add Image</ion-label>
+    <ion-input class="logbox"  type="file" accept="image/*" placeholder="License ID" ></ion-input>
+  </ion-item>
+
+</ion-list>
+
+
+
+  <div   *ngFor="let img of images;let i=index">
+<!--
+    <button  ion-button  clear icon-only  (click)="deletes(i)"><ion-icon name="cross"  [color]="primary" ></ion-icon></button>
+    -->
+   <!--
+    <ion-buttons end style="position: absolute;">
+
+    <button ion-button  color="primary" clear icon-only (click)="deletes(i)" >
+      <ion-icon name='md-close-circle' is-active="false"></ion-icon>
+    </button>
+    </ion-buttons>
+
+    -->
+    <img [src]="img.url"  (load)="imageLoaded()" #imageSrc/>
+
+  </div>
+
+
+
+
+
+<P><b>Note:-</b> Your item will be sort by item number itself  </P>
+
+
+
+</ion-content>

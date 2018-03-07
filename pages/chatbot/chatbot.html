@@ -1,0 +1,222 @@
+<!--
+  Generated template for the ChatbotPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header style="position:fixed;" >
+  <ion-navbar no-padding>
+    <ion-row  no-padding style="height:auto;"  >
+      <button ion-button icon-only clear style="width:7%; " (click)="oncan()">
+        <ion-icon name="arrow-back" color="action"></ion-icon>
+      </button>
+      <div style="width: 40px; height: 40px; border-radius:20px;  background-color: #ffffff; padding: 0; margin-top:01%;"> <p style="color: #d81d5e; width: 40px; height: 40px; font-weight:400; margin-top:85%;font-size:27px;text-align: center; margin: 0; ;  " [innerHTML]="name.charAt(0)"></p></div>
+
+      <ion-col style="height: 10%; padding: 0%;">
+
+        <p style="color: #ffffff;margin-top:8%;margin-left: 3%;padding: 0%;font-size: 12px; position:absolute"> {{type}} </p>
+        <p style="color: #ffffff;margin-top:2%;margin-left: 3%;padding: 0%; "><b>{{name}}</b></p>
+      </ion-col>
+    </ion-row>
+
+    <ion-buttons end  [hidden]="!sert" >
+      <button ion-button icon-only (click)="hidese()">
+
+
+        <ion-icon name="md-search"  margin-right="6px" ></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+    <ion-buttons end  [hidden]="sert" >
+      <button ion-button icon-only (click)="rehide()">
+
+
+        <ion-icon name="close"  margin-right="6px" ></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end  >
+      <button ion-button icon-only (click)="goto()">
+
+
+        <ion-icon name="md-list"  margin-right="6px" ></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+  <ion-toolbar [hidden]="sert">
+    <ion-searchbar    style="" #searchbar    [(ngModel)]="inames" (ionInput)="getItemss(inames)" (ionCancel)="!hidese()"  placeholder="Message,  MMM DD,YYYY HH:MM AM/PM"  autofocus></ion-searchbar>
+
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+<ion-content padding-bottom="66px" margin-top="66px" padding-top="66px" width="100%" style=" background-color: rgba(232,237,234,0.37); padding-bottom: 66px; margin-top: 10px; padding-top:66px" (click)="clskbd()" #content   >
+
+<div style="width: 100%; height: 40px;" [hidden]="sert"></div>
+
+  <div  *ngFor="let  chat of chats |orderBy :['+tid']|search:'message,time':inames; " style="margin-top: 0%;margin-bottom: 0%;padding-top: 0%;padding-bottom: 0%;" >
+
+
+    <ion-chip  style="margin-right: 20%;"  *ngIf="false" >
+
+      <ion-label color="secondary">Start Conversation</ion-label>
+
+    </ion-chip>
+
+    <!--- message part-->
+
+
+    <!-- itration module -->
+
+    <!-- right side module start -->
+
+    <div  style="direction:rtl; width: auto; padding-bottom:1%;"  [hidden]="chat.sender_mail===email1? false:true">
+      <ion-row>
+        <div class="rightalign">
+          <p style="margin-top:0%;margin-bottom:0%;height:auto;direction:ltr;font-size: 17px; width:auto; padding-right: 1%; padding-left: 1%; white-space: pre-wrap; word-wrap: break-word;color:#ffffff ; display: block; text-align: left;" [innerHTML]="chat.message ">  </p>
+        </div>
+        <p  style="margin-top:3%;margin-bottom: 0%;  font-size:7px; text-align:left; direction: ltr;">{{chat.time}}</p>
+        <ion-icon name="ios-eye-outline"  color="primary" style="float:right;margin-top:3%;margin-bottom: 0%; margin-right:0%; font-size: 9px;"></ion-icon>
+      </ion-row>
+    </div>
+
+
+
+    <!-- left side module start -->
+    <div style="text-align:end;width: auto; padding-bottom:1%; "  [hidden]="chat.sender_mail===email1?true:false">
+      <ion-row>
+        <div class="leftalign">
+          <p   style="margin-top:0%;margin-bottom:0%;height:auto;font-size: 17px; width:auto; padding-right: 1%; padding-left: 1%;white-space: pre-wrap; word-wrap: break-word; color:#3d3d3d ;  display: block; text-align: left;" [innerHTML]="chat.message "> </p>
+        </div>
+
+        <p  style="margin-top:3%;margin-bottom: 0%;  font-size:7px; text-align:left">{{chat.time}}</p>
+        <ion-icon name="ios-eye-outline"  color="primary" style="float:right;margin-top:3%;margin-bottom: 0%; margin-right:1%; font-size: 9px;"></ion-icon>
+
+      </ion-row>
+    </div>
+
+    <!-- left side module start -->
+
+
+
+    <!-- left side image module start -->
+    <div style="direction: ltr;" [hidden]="clint_image">
+      <ion-row>
+        <div class="leftalign_imgae">
+
+
+          <img src="../../assets/image/logo.png"  height="100%" width="100%;" />
+        </div>
+
+        <pre  style="margin-top:1%;margin-bottom: 0%;  font-size:7px; text-align:left">12:38</pre>
+        <ion-icon name="ios-eye-outline"  color="primary" style="float:right;margin-top:3%;margin-bottom: 0%; margin-right:1%; font-size: 9px;"></ion-icon>
+        <ion-icon name="ios-download-outline"  style="margin-top: 20%;"></ion-icon>
+
+      </ion-row>
+    </div>
+
+    <!-- left side module  image start -->
+
+
+
+
+
+    <!-- right side image module start -->
+    <div  style="direction:rtl;" [hidden]="self_image" >
+      <ion-row>
+        <div class="rightalign_image">
+          <img src="../../assets/image/logo.png"  height="100%" width="100%;" />
+        </div>
+        <pre  style="margin-top:1%;margin-bottom: 0%;  font-size:7px; text-align:left">12:38</pre>
+        <ion-icon name="ios-eye-outline"  color="primary" style="float:right;margin-top:3%;margin-bottom: 0%; margin-right:0%; font-size: 9px;"></ion-icon>
+        <ion-icon name="ios-download-outline"  style="margin-top: 20%;"></ion-icon>
+      </ion-row>
+    </div>
+    <!-- right side module  image start -->
+
+
+
+
+
+
+
+    <!-- message end-->
+
+
+
+
+
+  </div>
+  <div style="width: 100%;height: 34px; background-color:rgba(203,27,88,0);">
+
+  </div>
+
+  <!--
+  <div [hidden]="bigju" style="height: 240px; width:100%;background-color: rgba(203,27,88,0); "></div>
+-->
+
+
+
+</ion-content>
+
+<ion-footer>
+
+  <div class="scrollmenu">
+    <ion-chip color="blum" style="margin-left: 2%; margin-right: 2%; margin-bottom: 10%; position: fixed;">
+      <ion-icon name="ios-timer-outline"  color="blum"></ion-icon>
+      <ion-label [innerHTML]=otp></ion-label>
+      <button ion-button  clear >
+        <ion-icon name="close"  color="blum"></ion-icon>
+      </button>
+    </ion-chip>
+
+     <div style="margin-left: 120px;">
+
+
+
+       <ion-chip color="primary" style=" background: rgba(70,137,255,0); width: 1px;" >
+         <ion-label></ion-label>
+       </ion-chip>
+
+       <ion-chip color="primary" style="margin-left: 2%; margin-right: 2%;" *ngFor="let fr of tempte|search:'temp':message;" (click)="send(fr.temp)">
+      <ion-label>{{fr.temp}}</ion-label>
+    </ion-chip>
+     </div>
+
+
+  </div>
+
+
+  <ion-row (click)="setfo()" style="padding-bottom:0%;background-color:#e8edea; ">
+
+      <textarea wrap="hard" placeholder="Type here..." rows="1" #textarea cols="20" fz-elastic style="font-size:17px;  word-break: break-all; margin-bottom:2%; margin-top:2%; margin-left:3%;white-space:pre-wrap; bottom:0%;padding-left:2%;padding-right:2%; padding-bottom:6px;padding-top:6px; overflow: scroll; min-height:25px;width:80%; max-height:160px; outline: none !important;
+      border-color: #cb1b58;-moz-user-select: text; -webkit-user-select: text; -ms-user-select: text; " type="text" [(ngModel)]="message" (keyup)="typing()"  (ionInput)="getItems(message)" >
+      </textarea>
+    <!--
+
+    <ion-fab right  style="bottom:13%; right:3%;" >
+      <button ion-button icon-only clear>
+        <ion-icon name="ios-attach" color="primary" style="margin-top:10px;margin-right: 3%;height: 20px;width: 20px;  " > </ion-icon>
+      </button>
+    </ion-fab>
+    -->
+
+  </ion-row>
+
+
+
+  <ion-fab right  style="bottom:0.5%; right: 0%;" >
+
+    <button ion-fab mini  color="fabi" [hidden]="message.trim().length==0?true:false"  (mousedown)="$event.preventDefault(); send(message)"> <ion-icon name="send" ></ion-icon></button>
+
+  </ion-fab>
+
+
+</ion-footer>
+
+

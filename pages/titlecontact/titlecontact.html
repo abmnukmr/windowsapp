@@ -1,0 +1,39 @@
+<!--
+  Generated template for the Titlecontact page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-buttons right>
+      <button ion-button block outline (click)="updatedata()"> Save</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <p style="color: #cb1b58;" *ngIf="wait">wait.. </p>
+
+  <ion-list>
+
+
+
+    <ion-item>
+    <p>{{phone}}</p>
+    </ion-item>
+
+<!--
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="whatsapp" placeholder="Whatsapp No"></ion-input>
+    </ion-item>
+-->
+
+  </ion-list>
+
+
+</ion-content>

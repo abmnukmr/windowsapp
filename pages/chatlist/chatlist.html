@@ -1,0 +1,85 @@
+<!--
+  Generated template for the ChatlistPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+  <ion-navbar>
+
+      <p style="margin-left:4%; color: #ffffff;"><b>{{userb}}{{refreshh}}</b></p>
+
+
+
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showCheckbox()">
+
+
+        <ion-icon name="md-more"  ></ion-icon>
+      </button>
+
+    </ion-buttons>
+
+
+
+
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-searchbar   style="" #searchbar    [(ngModel)]="iname" (ionInput)="getItems(iname)"  placeholder="EmailId, Name, Last message"  autofocus></ion-searchbar>
+
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content no-padding>
+
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+
+  <ion-list>
+    <ion-item-sliding    *ngFor="let item of Lastarray |orderBy :['-tid'] |search:'user_sender,message,user_reciever,sender_mail,email':iname;let i=index "  [hidden]="item.email==email1||item.sender_mail==email1?false:true">
+<ion-item  (click)="gotochatbot(item.email==email1?item.user_sender:item.user_reciever,item.image,item.email==email1?item.sender_mail:item.email,item)">
+     <ion-row>
+       <ion-col col-2>
+      <ion-avatar item-start>
+
+
+        <div style="width: 40px; height: 40px; border-radius:20px; background-color: #cb1b58;padding-top: 7%"> <p style="color: white; font-weight:400; font-size:27px;text-align: center; " [innerHTML]="item.email==email1?item.user_sender.charAt(0):item.user_reciever.charAt(0)"></p></div>
+
+      </ion-avatar>
+       </ion-col>
+       <ion-col col-10>
+
+         <h2 style="overflow:hidden;text-overflow: ellipsis;margin-left: 1px;" [innerHTML]="item.email==email1?item.user_sender:item.user_reciever"></h2>
+         <p style="overflow:hidden;text-overflow: ellipsis;margin-left: 1px;font-size: 10px;" [innerHTML]="item.email==email1?item.sender_mail:item.email"></p>
+
+          <ion-row>
+          <ion-col col-10>
+             <p *ngIf="type==''?true:false" style="overflow:hidden;margin-left: 1px;text-overflow: ellipsis;" [innerHTML]="item.message|safeHtml"></p> <p *ngIf="item.email==recmail?true:false" style="color: #cb1b58">{{type}}</p>
+          </ion-col>
+           <ion-col col-2>
+             <p item-end style="font-size:7px;">{{item.time}}</p>
+           </ion-col>
+
+       </ion-row>
+       </ion-col>
+      </ion-row>
+  </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger"  (click)="deletedb(item.sender_mail,item.email,item.tid)" ><ion-icon name="trash"> Delete</ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+</ion-content>

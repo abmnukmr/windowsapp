@@ -1,0 +1,130 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #cb1b58,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  blum: #5d86ff,
+  two: #ffaf24,
+  action:#ffffff,
+  fabi:#660066
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+$card-ios-margin-left:0px;
+$card-ios-margin-right:0px;
+$popover-ios-width:300px;
+$popover-md-max-height:500px;
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+$toolbar-md-button-color: #ffffff;
+$toolbar-md-title-text-color: #ffffff;
+$toolbar-md-text-color:#fff;
+$toast-md-title-color:#fff;
+$toolbar-md-title-text-color: #fffafa;
+$searchbar-md-input-search-icon-color: #660066;
+$segment-button-md-border-bottom-color:#ffffff;
+$searchbar-md-input-clear-icon-color: #660066;
+$segment-button-md-text-color-activated:#fff;
+$grid-padding-width:1px;
+$toolbar-md-background:linear-gradient(-270deg, #cb1b58, #660066);
+$toast-md-background:(#cb1b58);
+$segment-button-md-text-color-activated:#cb1b58;
+$segment-button-md-border-color-activated:#cb1b58;
+$segment-button-md-text-color-activated:#cb1b58;
+$tabs-md-background: #fff;
+$segment-button-md-border-color-activated:#fff;
+$segment-button-md-text-color-activated:#fff;
+$toggle-md-handle-background-color-on:  #cb1b58;
+$toggle-md-handle-background-color-off:  #fff;
+$searchbar-md-input-box-shadow: rgba(255, 255, 255, 0);
+$toggle-md-active-color:#cb1b58;
+$toggle-md-disabled-opacity:1;
+$searchbar-md-input-search-icon-color:#660066;
+$searchbar-md-input-background-color: rgba(255, 255, 255,1);
+$card-md-margin-left:0px;
+$card-md-margin-right:0px;
+$text-input-md-highlight-color:"transparent";
+$text-input-md-highlight-color:rgba(255, 255, 255,0);
+// Input highlight - valid
+$text-input-md-hightlight-color-valid:"transparent";
+
+// Input highlight - invalid
+$text-input-md-hightlight-color-invalid:"transparent";
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

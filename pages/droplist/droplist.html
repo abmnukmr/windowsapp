@@ -1,0 +1,60 @@
+<!--
+  Generated template for the DroplistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+
+    <ion-searchbar   style="" #searchbar    [(ngModel)]="iname" (ionInput)="getItems(iname)"   autofocus></ion-searchbar>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+
+
+  <ion-list>
+
+
+
+  <ion-item *ngFor="let item of price |search:'name,price':iname;let i=index">
+    <p style="color: #3a2c40;" [innerHTML]="item.name"></p>
+    <p [innerHTML]="'₹'+item.price">​</p>
+    <button ion-button icon-only clear item-end [hidden]="shon(i)==0 ||shon(i)=='0'?true:false" (click)="sub(item.price,i)">
+      <ion-icon name="ios-remove-circle-outline" color="primary" item-end></ion-icon>
+    </button>
+    <ion-badge item-end color="two" [hidden]="shon(i)==0 ||shon(i)=='0'?true:false">{{shon(i)}}</ion-badge>
+
+    <button ion-button icon-only clear item-end (click)="add(item.price,i)">
+      <ion-icon name="ios-add-circle-outline" color="primary" item-end ></ion-icon>
+    </button>
+  <p style="color: #cb1b58;">₹​{{item.select}}</p>
+  </ion-item>
+
+</ion-list>
+
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+
+
+  <ion-item>
+    <button ion-button outline  (click)="dismiss()"item-end>
+      close
+    </button>
+  <button ion-button outline item-end [hidden]="ort==1?true:false" (click)="order()">Proceed</button>
+  </ion-item>
+
+</ion-footer>

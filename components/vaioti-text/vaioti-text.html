@@ -1,0 +1,38 @@
+<div #decorate class="decorator">
+  <button data-command="bold"><strong>B</strong></button>
+  <button data-command="italic"><i>I</i></button>
+  <button data-command="underline"><u>U</u></button>
+  <button data-command="subscript">S<sub>2</sub></button>
+  <button data-command="superscript">S<sup>2</sup></button>
+  <button data-command="strikeThrough"><s>S</s></button> &nbsp;
+  <button data-command="fontSize|6"><span>A</span></button>
+  <button data-command="removeFormat"><span style="font-size: 1.0em;">Reset</span></button>
+  <button data-command="fontSize|1"><span style="font-size: 0.6em;">A</span></button> &nbsp;
+  <button data-command="formatBlock|<pre>">  < >  </button>
+  <button data-command="foreColor|#cb1b58"> <span style="background-color: #cb1b58; color: #ffffff;border-radius: 50%50%50%50%;padding-left: 15%; padding-right: 15%"> A </span>  </button>
+  <button data-command="foreColor|#000000"> <span style="background-color: #0f0618; color: #ffffff;border-radius: 50%50%50%50%;padding-left: 15%; padding-right: 15%"> A </span>  </button>
+  <button data-command="formatBlock|<h1>">H1</button>
+  <button data-command="formatBlock|<h2>">H2</button>
+  <button data-command="formatBlock|<h3>">H3</button>
+  <button data-command="formatBlock|<h4>">H4</button>
+  <button data-command="formatBlock|<h5>">H5</button>
+  <button data-command="formatBlock|<h6>">H6</button>
+  <button data-command="formatBlock|<p>">Normal</button> &nbsp;
+  <button data-command="justifyLeft">Left</button>
+  <button data-command="justifyCenter">Center</button>
+  <button data-command="justifyRight">Right</button>
+  <button data-command="justifyFull">Full</button> &nbsp;
+  <button data-command="insertHorizontalRule">HR</button>
+  <button data-command="insertOrderedList">OL</button>
+  <button data-command="insertUnorderedList">UL</button>
+
+</div>
+
+<div #styler>
+
+</div>
+
+<div #editor contenteditable="true" class="maineditor" tappable [attr.data-placeholder-text]="getPlaceholderText()">
+</div>
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand -->
